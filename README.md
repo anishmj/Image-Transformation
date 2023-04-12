@@ -35,9 +35,25 @@ Developed By: ANISH M J
 Register Number: 212221230005
 ~~~
 ~~~
-i)Image Translation
+
+# To show the original image and to find the shape of the image
+
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+img = cv2.imread('city.jpeg')
+plt.imshow(img)
+plt.show()
+
+img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+plt.imshow(img)
+plt.show()
 
 rows,cols,dim = img.shape
+
+i)Image Translation
+
+
 
 M = np.float32([[1,0,50], [0,1,75],[0,0,1]])
 translated_image = cv2.warpPerspective(img,M,(cols,rows))
